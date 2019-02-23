@@ -13,18 +13,29 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
 
      <script type="text/babel">
-       class Friday extends React.Component {
+       class GreatDay extends React.Component {
+         constructor(props){
+           super(props);
+           this.state = {
+             season: "winter"
+           }
+         }
+
          render() {
            return (
              <div>
-               <h3>Hooray! It's Friday!!!</h3>
+               <h1>Hooray, {this.props.name}!</h1>
+               <h2>We're in the season of {this.state.season}.</h2>
+               <h2>It's a {this.props.great}!</h2>
              </div>
            );
          }
        }
 
        ReactDOM.render(
-         <Friday />, document.getElementById('app')
+         <GreatDay
+         name="Matthew"
+         great="great day" />, document.getElementById('app')
        );
 
      </script>
